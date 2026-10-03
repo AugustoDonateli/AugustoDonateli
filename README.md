@@ -1,152 +1,70 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
-  <img alt="Augusto Donateli, desenvolvedor web em Cachoeiro de Itapemirim" src="assets/header-light.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/cabecalho-escuro.svg">
+  <img alt="Oi, eu sou o Guto. Augusto Donateli, desenvolvedor web em Cachoeiro de Itapemirim, ES." src="assets/cabecalho-claro.svg" width="100%">
 </picture>
 
-<p align="center">
-  <a href="mailto:augustodonatelisimoes@gmail.com"><img src="https://img.shields.io/badge/e--mail-falar_comigo-14b8a6?style=for-the-badge&logo=gmail&logoColor=white" alt="E-mail"></a>
-  <img src="https://img.shields.io/badge/freelas-abertos-8b5cf6?style=for-the-badge" alt="Freelas abertos">
-  <img src="https://img.shields.io/badge/Ifes-Inform%C3%A1tica-22d3ee?style=for-the-badge" alt="Estudante de Informática no Ifes">
-</p>
+Estudo Informática no Ifes e faço software para gente de verdade: o site do projeto de divulgação científica da escola, a sala de fuga de química da feira de ciências, uma plataforma de estudos para o ENEM e sites para comércio aqui de Cachoeiro, a capital secreta do mundo.
 
----
+Ligo para o detalhe que quase ninguém repara. No Compasso, o ícone da aba pulsa como um metrônomo.
 
-## 👋 Sobre mim
+## Agora
 
-Sou o **Guto**, desenvolvedor web e estudante de Informática no **Ifes**, em Cachoeiro de Itapemirim (ES).
-Faço sites e automações para negócios da região e construo ferramentas que resolvem um problema de verdade:
-de uma plataforma de estudos para o ENEM a uma sala de fuga de química com placar em tempo real.
+<picture><source media="(prefers-color-scheme: dark)" srcset="assets/ficha-aurora-escuro.svg"><img align="right" width="132" alt="Aurora, em construção" src="assets/ficha-aurora-claro.svg"></picture>
 
-```ts
-const guto = {
-  base: "Cachoeiro de Itapemirim, ES 🇧🇷",
-  estuda: "Informática no Ifes",
-  trabalhaCom: [
-    "sites para negócios locais",
-    "automação",
-    "IA no WhatsApp",
-  ],
-  stack: ["React", "TypeScript", "Next.js", "Supabase"],
-  agora: "construindo a Aurora",
-};
-```
+- Construindo a **[Aurora](https://aurora-landing-seven.vercel.app)**, uma recepcionista com IA que atende o WhatsApp de pequenos negócios. Ela tira dúvida, passa preço e marca horário sozinha, olhando a agenda do dono.
+- Gravando vídeos para o [@ifesciencia](https://www.instagram.com/ifesciencia/), o projeto de divulgação científica do Ifes.
+- Escolhendo o projeto que vou levar para a Jacitec, a mostra científica do campus.
 
-## 🚀 Construindo agora
+<br clear="right">
 
-> **Aurora**: uma recepcionista com inteligência artificial que atende o WhatsApp de pequenos negócios
-> 24 horas por dia. Tira dúvidas, informa preços e horários e agenda sozinha, consultando a agenda do dono.
-> Quando o assunto é sensível, passa para um humano.
->
-> [**Conhecer a Aurora →**](https://aurora-landing-seven.vercel.app)
-
-## 🧰 O que eu faço
-
-<table>
-  <tr>
-    <td width="33%" valign="top">
-      <h3>🌐 Sites</h3>
-      Landing pages e sites para negócios locais: rápidos, bonitos no celular e fáceis de achar no Google.
-    </td>
-    <td width="33%" valign="top">
-      <h3>⚙️ Automação</h3>
-      Fluxos com n8n, integrações com WhatsApp e coleta de dados para tirar trabalho repetitivo do dia a dia.
-    </td>
-    <td width="33%" valign="top">
-      <h3>📚 Educação</h3>
-      Ferramentas interativas de estudo: guias, simuladores e plataformas que ensinam fazendo.
-    </td>
-  </tr>
-</table>
-
-## ⭐ Projetos em destaque
-
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <a href="https://github.com/AugustoDonateli/compasso">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="assets/card-compasso-dark.svg">
-          <img alt="Compasso" src="assets/card-compasso-light.svg" width="100%">
-        </picture>
-      </a>
-      <p align="center"><a href="https://compasso-gamma.vercel.app">🔗 acessar</a> · <a href="https://github.com/AugustoDonateli/compasso">📂 código</a></p>
-    </td>
-    <td width="50%" valign="top">
-      <a href="https://github.com/AugustoDonateli/estudos-enem">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="assets/card-enem-dark.svg">
-          <img alt="Estudos ENEM" src="assets/card-enem-light.svg" width="100%">
-        </picture>
-      </a>
-      <p align="center"><a href="https://estudos-enem-sooty.vercel.app">🔗 acessar</a> · <a href="https://github.com/AugustoDonateli/estudos-enem">📂 código</a></p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <a href="https://github.com/AugustoDonateli/escape-quimico">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="assets/card-escape-dark.svg">
-          <img alt="Escape Químico" src="assets/card-escape-light.svg" width="100%">
-        </picture>
-      </a>
-      <p align="center"><a href="https://escape-room-quimica.vercel.app">🔗 acessar</a> · <a href="https://github.com/AugustoDonateli/escape-quimico">📂 código</a></p>
-    </td>
-    <td width="50%" valign="top">
-      <a href="https://github.com/AugustoDonateli/site-ifesciencia">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="assets/card-ifesciencia-dark.svg">
-          <img alt="Ifesciência" src="assets/card-ifesciencia-light.svg" width="100%">
-        </picture>
-      </a>
-      <p align="center"><a href="https://site-ifesciencia.vercel.app">🔗 acessar</a> · <a href="https://github.com/AugustoDonateli/site-ifesciencia">📂 código</a></p>
-    </td>
-  </tr>
-</table>
-
-<details>
-<summary><b>➕ Mais projetos</b></summary>
-<br>
-
-| Projeto | O que é |
-|---|---|
-| 🏀 [nba-do-zero](https://github.com/AugustoDonateli/nba-do-zero) | Guia interativo de basquete num único arquivo HTML, com jogadas animadas |
-| ⌨️ [conceito-logitech-k950](https://github.com/AugustoDonateli/conceito-logitech-k950) | Landing de produto com vídeo controlado pela rolagem |
-| 🌳 [biomap-campus](https://github.com/AugustoDonateli/biomap-campus) | Mapa interativo das plantas do campus, com filtros e estatísticas |
-| 🗄️ [ifes-banco-de-dados](https://github.com/AugustoDonateli/ifes-banco-de-dados) | Consultas avançadas em SQL com PostgreSQL rodando no navegador |
-| 🔬 [ifes-guia-biologia](https://github.com/AugustoDonateli/ifes-guia-biologia) | Guias de estudo interativos para as provas práticas de Biologia |
-
-</details>
-
-## 🛠️ Stack
+## Coisas que eu fiz
 
 <p>
-  <b>Front-end</b><br><br>
-  <img src="https://skillicons.dev/icons?i=react,ts,js,nextjs,vite,tailwind,html,css&perline=8" alt="React, TypeScript, JavaScript, Next.js, Vite, Tailwind, HTML, CSS">
-</p>
-<p>
-  <b>Back-end e dados</b><br><br>
-  <img src="https://skillicons.dev/icons?i=supabase,firebase,postgres,cloudflare,nodejs,python&perline=8" alt="Supabase, Firebase, PostgreSQL, Cloudflare, Node.js, Python">
-</p>
-<p>
-  <b>Ferramentas</b><br><br>
-  <img src="https://skillicons.dev/icons?i=vercel,git,github,vscode&perline=8" alt="Vercel, Git, GitHub, VS Code">
-</p>
-<p>
-  <img src="https://img.shields.io/badge/n8n-EA4B71?style=flat-square&logo=n8n&logoColor=white" alt="n8n">
-  <img src="https://img.shields.io/badge/GSAP-88CE02?style=flat-square&logo=greensock&logoColor=black" alt="GSAP">
-  <img src="https://img.shields.io/badge/Tone.js-111111?style=flat-square" alt="Tone.js">
-  <img src="https://img.shields.io/badge/Playwright-2EAD33?style=flat-square&logo=playwright&logoColor=white" alt="Playwright">
-  <img src="https://img.shields.io/badge/Vitest-6E9F18?style=flat-square&logo=vitest&logoColor=white" alt="Vitest">
+  <a href="https://github.com/AugustoDonateli/compasso"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/ficha-compasso-escuro.svg"><img alt="Compasso" src="assets/ficha-compasso-claro.svg" width="15%"></picture></a>
+  <a href="https://github.com/AugustoDonateli/estudos-enem"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/ficha-enem-escuro.svg"><img alt="Estudos ENEM" src="assets/ficha-enem-claro.svg" width="15%"></picture></a>
+  <a href="https://github.com/AugustoDonateli/escape-quimico"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/ficha-escape-escuro.svg"><img alt="Escape Químico" src="assets/ficha-escape-claro.svg" width="15%"></picture></a>
+  <a href="https://github.com/AugustoDonateli/site-ifesciencia"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/ficha-ifesciencia-escuro.svg"><img alt="Ifesciência" src="assets/ficha-ifesciencia-claro.svg" width="15%"></picture></a>
+  <a href="https://github.com/AugustoDonateli/nba-do-zero"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/ficha-nba-escuro.svg"><img alt="NBA do zero" src="assets/ficha-nba-claro.svg" width="15%"></picture></a>
+  <a href="https://github.com/AugustoDonateli/conceito-logitech-k950"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/ficha-teclado-escuro.svg"><img alt="Teclado K950" src="assets/ficha-teclado-claro.svg" width="15%"></picture></a>
 </p>
 
-## 🐍 Atividade
+<sub>O número de cada ficha é a ordem em que o repositório nasceu na minha conta. A cor é a família: azul para estudo, verde para ciência, laranja para design.</sub>
+
+**[Compasso](https://github.com/AugustoDonateli/compasso).** Teoria musical que vira som. Você clica numa escala, ela acende no braço do violão e toca. O menu é o quarto de um músico, e cada instrumento abre uma ferramenta. No ar em [compasso-gamma.vercel.app](https://compasso-gamma.vercel.app).
+
+**[Estudos ENEM](https://github.com/AugustoDonateli/estudos-enem).** Uma plataforma de preparação para o ENEM feita sob medida para um aluno. Ela decide o que estudar no dia, guarda cada erro como um conceito para revisar e encaixa as revisões até a data da prova. No ar em [estudos-enem-sooty.vercel.app](https://estudos-enem-sooty.vercel.app).
+
+**[Escape Químico](https://github.com/AugustoDonateli/escape-quimico).** O sistema da sala de fuga de química que a minha turma montou para a feira de ciências. Organiza a fila, conduz cada sessão, entrega as perguntas pelos QR codes das estações e mostra o placar ao vivo.
+
+**[Ifesciência](https://github.com/AugustoDonateli/site-ifesciencia).** O site do @ifesciencia. Cada vídeo vira uma ficha que um professor consegue reproduzir em sala, com material, passo a passo e PDF, e a equipe publica sem precisar de programador.
+
+**[NBA do zero](https://github.com/AugustoDonateli/nba-do-zero).** Um guia de basquete num arquivo HTML só. Serve para quem não sabe nada entender a NBA e ainda melhorar a tática do time com jogadas animadas.
+
+**[Teclado K950](https://github.com/AugustoDonateli/conceito-logitech-k950).** Estudo de página de produto em que o vídeo do teclado avança conforme você rola. Projeto de estudo, sem ligação com a marca.
+
+## O espectro do meu ano
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/AugustoDonateli/AugustoDonateli/output/github-snake-dark.svg">
-  <img alt="Cobrinha comendo o gráfico de contribuições" src="https://raw.githubusercontent.com/AugustoDonateli/AugustoDonateli/output/github-snake.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/espectro-escuro.svg">
+  <img alt="Minhas contribuições no GitHub nos últimos 12 meses, desenhadas como um espectro de emissão." src="assets/espectro-claro.svg" width="100%">
 </picture>
 
-## 📫 Contato
+Cada risco é um dia no GitHub, e quanto mais claro, mais eu programei. O desenho se refaz sozinho toda madrugada.
 
-Tem um projeto, um negócio que precisa de site ou quer trocar uma ideia?
-Me chama em **[augustodonatelisimoes@gmail.com](mailto:augustodonatelisimoes@gmail.com)**.
+## Com o que eu trabalho
+
+No dia a dia: TypeScript, React, Next.js e Supabase. Quando o projeto pede, também Tailwind, GSAP, Tone.js, PostgreSQL, Cloudflare Workers, Playwright e automações no n8n.
+
+## Fora do teclado
+
+- Toco bateria há poucos meses. A meta é tocar *Everlong* inteira.
+- Jogo basquete e ainda estou tentando enterrar.
+- Pesco tucunaré sempre que dá.
+- Tenho uma impressora 3D que imprime peça para metade dos meus amigos.
+- Sou escoteiro desde os 7 anos.
+
+## Fala comigo
+
+Tem um projeto, um negócio que precisa de site ou quer só trocar uma ideia? Me manda um e-mail em [augustodonatelisimoes@gmail.com](mailto:augustodonatelisimoes@gmail.com).
+
+<sub>As artes desta página são desenhadas por código, com as fontes embutidas. Está tudo em [`scripts/`](scripts).</sub>
