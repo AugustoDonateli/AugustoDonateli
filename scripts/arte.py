@@ -107,6 +107,17 @@ def largura(texto: str, tamanho: float, peso: int = 800, opsz: int = 96, espacam
     return total * tamanho / upm + espacamento * max(len(texto) - 1, 0)
 
 
+@lru_cache(maxsize=None)
+def _caveat() -> TTFont:
+    return TTFont(str(CAVEAT))
+
+
+def largura_caveat(texto: str, tamanho: float) -> float:
+    fonte = _caveat()
+    cmap, hmtx, upm = fonte.getBestCmap(), fonte["hmtx"], fonte["head"].unitsPerEm
+    return sum(hmtx[cmap[ord(c)]][0] for c in texto if ord(c) in cmap) * tamanho / upm
+
+
 def txt(s: str) -> str:
     return escape(s)
 

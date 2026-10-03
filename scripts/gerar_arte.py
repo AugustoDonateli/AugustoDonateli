@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import math
 
-from arte import PALETAS, fontes_css, largura, salvar, txt
+from arte import PALETAS, fontes_css, largura, largura_caveat, salvar, txt
 
 EASE = "cubic-bezier(.22,1,.36,1)"  # o mesmo EASE da Aurora
 
@@ -27,7 +27,7 @@ def cabecalho(tema: str) -> str:
     espaco = largura(" ", tam, peso, 72)
     for i, w in enumerate(manchete.split(" ")):
         palavras.append(
-            f'<text class="pal" style="animation-delay:{0.38 + i * 0.09:.2f}s" x="{x:.1f}" y="{base}">{txt(w)}</text>'
+            f'<text class="pal" style="animation-delay:{0.1 + i * 0.07:.2f}s" x="{x:.1f}" y="{base}">{txt(w)}</text>'
         )
         x += largura(w, tam, peso, 72, ls) + espaco
 
@@ -36,14 +36,6 @@ def cabecalho(tema: str) -> str:
 
     # Seta à mão: da anotação até a borda da ficha
     p0, c1, c2, p3 = (472, 300), (430, 316), (392, 292), (370, 248)
-    pts = [
-        tuple(
-            (1 - t) ** 3 * a + 3 * (1 - t) ** 2 * t * b + 3 * (1 - t) * t**2 * c + t**3 * d
-            for a, b, c, d in zip(p0, c1, c2, p3)
-        )
-        for t in [i / 60 for i in range(61)]
-    ]
-    comp = sum(math.dist(pts[i], pts[i + 1]) for i in range(60))
     dx, dy = p3[0] - c2[0], p3[1] - c2[1]
     n = math.hypot(dx, dy)
     ux, uy = -dx / n, -dy / n
@@ -53,30 +45,32 @@ def cabecalho(tema: str) -> str:
         ry = ux * math.sin(ang) + uy * math.cos(ang)
         pontas.append(f"M{p3[0]} {p3[1]} l{rx * 15:.1f} {ry * 15:.1f}")
 
+    nx, ny, ntam = 486, 318, 40
+    antes = largura_caveat("Au de Augusto. E de ", ntam)
+    ouro = largura_caveat("ouro", ntam)
+    ux0, ux1, uy = nx + antes - 2, nx + antes + ouro + 4, ny + 9
+    risco = f"M{ux0:.0f} {uy} C{ux0 + ouro * .3:.0f} {uy + 4} {ux0 + ouro * .7:.0f} {uy - 3} {ux1:.0f} {uy + 1}"
+    risco_comp = ouro * 1.1
+
     texto_bricolage = manchete + linha + "79196,97AuAugusto[Xe] 4f14 5d10 6s1"
     css = f"""
 {fontes_css(texto_bricolage, nota)}
 .b{{font-family:'Bricolage',system-ui,sans-serif}}
 .pal{{font:800 {tam}px 'Bricolage',system-ui,sans-serif;letter-spacing:{ls}px;fill:{p['tinta']};
-  animation:sobe .7s {EASE} both}}
-.linha{{font:440 27px 'Bricolage',system-ui,sans-serif;fill:{p['apoio']};animation:aparece .8s ease-out .95s both}}
+  animation:assenta .9s {EASE}}}
+.linha{{font:440 27px 'Bricolage',system-ui,sans-serif;fill:{p['apoio']}}}
 .nota{{font:600 40px 'Caveat',cursive;fill:{p['caneta']}}}
-.cai{{transform:rotate(-3deg);animation:cai 1s {EASE} both}}
-.sombra{{transform:translate(12px,12px);animation:pousa .45s ease-out .55s both}}
-.brilho{{transform:translateX(-420px);animation:brilho 1.2s cubic-bezier(.45,0,.2,1) 2.7s both}}
-.seta{{stroke-dasharray:{comp:.1f};stroke-dashoffset:{comp:.1f};animation:risca .6s ease-in-out 1.55s forwards}}
-.ponta{{opacity:0;animation:aparece .12s linear 2.12s forwards}}
-.escreve{{transform:scaleX(0);transform-origin:0 0;transform-box:fill-box;animation:escreve 1.15s steps(28,end) 1.8s forwards}}
-@keyframes sobe{{from{{opacity:0;transform:translateY(14px)}}to{{opacity:1;transform:none}}}}
-@keyframes aparece{{from{{opacity:0}}to{{opacity:1}}}}
-@keyframes cai{{0%{{opacity:0;transform:translateY(-46px) rotate(-11deg)}}55%{{opacity:1;transform:translateY(5px) rotate(-1.6deg)}}78%{{transform:translateY(-2px) rotate(-3.4deg)}}100%{{transform:rotate(-3deg)}}}}
-@keyframes pousa{{from{{transform:translate(0,0);opacity:0}}to{{transform:translate(12px,12px);opacity:1}}}}
-@keyframes brilho{{to{{transform:translateX(420px)}}}}
-@keyframes risca{{to{{stroke-dashoffset:0}}}}
-@keyframes escreve{{to{{transform:scaleX(1)}}}}
+.cai{{transform:rotate(-3deg);animation:pousa 1.5s {EASE} .25s}}
+.sombra{{transform:translate(12px,12px);animation:sombra 1.5s {EASE} .25s}}
+.brilho{{transform:translateX(-420px);animation:brilho 11s cubic-bezier(.45,0,.2,1) 1.6s infinite}}
+.risco{{stroke-opacity:0;stroke-dasharray:1 2;stroke-dashoffset:1;animation:risca .55s ease-out 2s forwards}}
+@keyframes assenta{{from{{transform:translateY(7px)}}to{{transform:none}}}}
+@keyframes pousa{{0%{{transform:rotate(-3deg)}}22%{{transform:translateY(-16px) rotate(-5.5deg)}}48%{{transform:translateY(3px) rotate(-2.2deg)}}64%{{transform:translateY(-1px) rotate(-3.3deg)}}80%,100%{{transform:rotate(-3deg)}}}}
+@keyframes sombra{{0%{{transform:translate(12px,12px)}}22%{{transform:translate(22px,26px);opacity:.55}}48%{{transform:translate(10px,10px);opacity:1}}80%,100%{{transform:translate(12px,12px)}}}}
+@keyframes brilho{{0%{{transform:translateX(-420px)}}11%,100%{{transform:translateX(420px)}}}}
+@keyframes risca{{from{{stroke-opacity:1;stroke-dashoffset:1}}to{{stroke-opacity:1;stroke-dashoffset:0}}}}
 @media (prefers-reduced-motion:reduce){{
-  .pal,.linha,.cai,.sombra,.brilho,.ponta,.seta,.escreve{{animation:none}}
-  .seta{{stroke-dashoffset:0}} .ponta{{opacity:1}} .escreve{{transform:none}} .brilho{{display:none}}
+  .pal,.cai,.sombra,.brilho,.risco{{animation:none}} .risco{{stroke-dashoffset:0;stroke-opacity:1}}
 }}"""
 
     m = lado / 2
@@ -99,11 +93,11 @@ def cabecalho(tema: str) -> str:
 </g>"""
 
     anotacao = f"""
-<path class="seta" d="M{p0[0]} {p0[1]} C{c1[0]} {c1[1]} {c2[0]} {c2[1]} {p3[0]} {p3[1]}" fill="none" stroke="{p['caneta']}" stroke-width="2.8" stroke-linecap="round"/>
-<path class="ponta" d="{' '.join(pontas)}" fill="none" stroke="{p['caneta']}" stroke-width="2.8" stroke-linecap="round"/>
-<g transform="rotate(-2.5 486 318)">
-  <mask id="escrita"><rect class="escreve" x="482" y="282" width="560" height="60" fill="#fff"/></mask>
-  <text class="nota" x="486" y="318" mask="url(#escrita)">{txt(nota)}</text>
+<path d="M{p0[0]} {p0[1]} C{c1[0]} {c1[1]} {c2[0]} {c2[1]} {p3[0]} {p3[1]}" fill="none" stroke="{p['caneta']}" stroke-width="2.8" stroke-linecap="round"/>
+<path d="{' '.join(pontas)}" fill="none" stroke="{p['caneta']}" stroke-width="2.8" stroke-linecap="round"/>
+<g transform="rotate(-2.5 {nx} {ny})">
+  <text class="nota" x="{nx}" y="{ny}">{txt(nota)}</text>
+  <path class="risco" pathLength="1" d="{risco}" fill="none" stroke="{p['caneta']}" stroke-width="3" stroke-linecap="round"/>
 </g>"""
 
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Oi, eu sou o Guto. Augusto Donateli, desenvolvedor web em Cachoeiro de Itapemirim.">

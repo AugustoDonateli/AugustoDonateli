@@ -84,7 +84,7 @@ def desenhar(tema: str, dados: dict) -> str:
     passo = (W - 2 * margem) / max(n - 1, 1)
     maximo = max((d["count"] for d in dias), default=0) or 1
 
-    riscos, brilhos = [], []
+    riscos, brilhos, acesos = [], [], []
     for i, d in enumerate(dias):
         c = d["count"]
         if not c:
@@ -94,6 +94,9 @@ def desenhar(tema: str, dados: dict) -> str:
         cor = _mistura(t)
         riscos.append(
             f'<rect x="{x - (1 + 1.4 * t):.1f}" y="{faixa_y}" width="{2 + 2.8 * t:.1f}" height="{faixa_h}" fill="{cor}" opacity="{0.6 + 0.4 * t:.2f}"/>'
+        )
+        acesos.append(
+            f'<rect x="{x - (2 + 2 * t):.1f}" y="{faixa_y}" width="{4 + 4 * t:.1f}" height="{faixa_h}" fill="#FFF6E0"/>'
         )
         if t > 0.25:
             brilhos.append(
@@ -121,7 +124,7 @@ def desenhar(tema: str, dados: dict) -> str:
     total = dados["total"]
     forte = max(dias, key=lambda d: d["count"]) if dias else None
     resumo = f"{total} contribuições nos últimos 12 meses"
-    destaque = f"dia mais forte: {_data_br(forte['date'])}, {forte['count']}" if forte and forte["count"] else ""
+    destaque = f"o dia mais forte foi {_data_br(forte['date'])}, com {forte['count']}" if forte and forte["count"] else ""
     texto = resumo + destaque + "".join(MESES) + "0123456789"
 
     borda = f' stroke="{p["regua"]}" stroke-opacity=".5" stroke-width="1.5"' if tema == "escuro" else ""
@@ -130,24 +133,27 @@ text{{font-family:'Bricolage',system-ui,sans-serif;font-size:17px;font-weight:50
 .ano{{font-size:14px;font-weight:600}}
 .resumo{{font-size:21px;font-weight:700;fill:{p['tinta']}}}
 .regua line{{stroke:{p['regua']};stroke-width:1.5}}
-.varre{{transform:scaleX(0);transform-origin:0 0;transform-box:fill-box;animation:varre 2.6s cubic-bezier(.45,0,.25,1) .3s forwards}}
-.cursor{{opacity:0;transform:translateX(0);animation:cursor 2.6s cubic-bezier(.45,0,.25,1) .3s both}}
-@keyframes varre{{to{{transform:scaleX(1)}}}}
-@keyframes cursor{{0%{{opacity:0;transform:translateX(0)}}6%{{opacity:1}}92%{{opacity:1}}100%{{opacity:0;transform:translateX({W}px)}}}}
-@media (prefers-reduced-motion:reduce){{.varre{{animation:none;transform:none}}.cursor{{display:none}}}}"""
+.janela{{transform:translateX(-200px);animation:le 3.4s cubic-bezier(.45,0,.25,1) .4s}}
+.cursor{{opacity:0;animation:cursor 3.4s cubic-bezier(.45,0,.25,1) .4s}}
+@keyframes le{{from{{transform:translateX(-200px)}}to{{transform:translateX({W + 60}px)}}}}
+@keyframes cursor{{0%{{opacity:0;transform:translateX(0)}}5%,92%{{opacity:.9}}100%{{opacity:0;transform:translateX({W}px)}}}}
+@media (prefers-reduced-motion:reduce){{.janela,.cursor{{animation:none;display:none}}}}"""
 
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="{txt(resumo)}. Cada risco do espectro é um dia.">
 <style>{css}</style>
 <defs>
   <filter id="halo" x="-50%" y="0" width="200%" height="100%"><feGaussianBlur stdDeviation="5"/></filter>
   <clipPath id="faixa"><rect x="0" y="{faixa_y}" width="{W}" height="{faixa_h}" rx="6"/></clipPath>
-  <mask id="leitura"><rect class="varre" x="0" y="0" width="{W}" height="{faixa_y + faixa_h}" fill="#fff"/></mask>
+  <linearGradient id="borda-janela"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".75" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <mask id="leitura" maskUnits="userSpaceOnUse" x="0" y="0" width="{W}" height="{faixa_y + faixa_h}"><rect class="janela" x="0" y="0" width="140" height="{faixa_y + faixa_h}" fill="url(#borda-janela)"/></mask>
 </defs>
 <rect x="0" y="{faixa_y}" width="{W}" height="{faixa_h}" rx="6" fill="#0F0D0A"{borda}/>
 <g clip-path="url(#faixa)">
-  <g mask="url(#leitura)">
+  <g filter="url(#halo)">{''.join(brilhos)}</g>
+  {''.join(riscos)}
+  <g mask="url(#leitura)" style="mix-blend-mode:screen">
     <g filter="url(#halo)">{''.join(brilhos)}</g>
-    {''.join(riscos)}
+    {''.join(acesos)}
   </g>
   <rect class="cursor" x="-1" y="{faixa_y}" width="2" height="{faixa_h}" fill="#FFF3D1"/>
 </g>
