@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="230" viewBox="0 0 600 230" role="img" aria-label="Ifesciência">
+<style>
+  .title { font: 750 30px 'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif; fill: #0f172a; letter-spacing: -0.6px; }
+  .kick  { font: 600 13px ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; fill: #a855f7; letter-spacing: 1.5px; text-transform: uppercase; }
+  .desc  { font: 400 16px 'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif; fill: #475569; }
+  .tag   { font: 600 12.5px ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; fill: #334155; }
+  .live  { font: 600 13px ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; fill: #475569; }
+  .arrow { font: 600 24px 'Segoe UI', Inter, -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif; fill: #475569; }
+  .pulse { animation: p 2s ease-in-out infinite; }
+  @keyframes p { 50% { opacity: .35; } }
+  .glow { animation: g 6s ease-in-out infinite alternate; }
+  @keyframes g { to { transform: translate(-40px, 20px); } }
+  @media (prefers-reduced-motion: reduce) { .pulse, .glow { animation: none; } }
+</style>
+<defs>
+  <clipPath id="c"><rect width="600" height="230" rx="20"/></clipPath>
+  <filter id="b" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="40"/></filter>
+</defs>
+<g clip-path="url(#c)">
+  <rect width="600" height="230" fill="#ffffff"/>
+  <ellipse class="glow" cx="560" cy="10" rx="170" ry="90" fill="#a855f7" opacity="0.22" filter="url(#b)"/>
+  <rect x="0" y="0" width="6" height="230" fill="#a855f7"/>
+  <text class="kick" x="32" y="48">divulgação científica</text>
+  <text class="title" x="30" y="88">Ifesciência</text>
+  <text class="desc" x="32" y="120">Site do @ifesciencia: catálogo de experimentos</text><text class="desc" x="32" y="144">para professores e painel da equipe.</text>
+  <rect x="32" y="176" width="79" height="28" rx="14" fill="#f1f5f9"/><text class="tag" x="71.5" y="195" text-anchor="middle">Next.js</text><rect x="119" y="176" width="87" height="28" rx="14" fill="#f1f5f9"/><text class="tag" x="162.5" y="195" text-anchor="middle">Supabase</text><rect x="214" y="176" width="55" height="28" rx="14" fill="#f1f5f9"/><text class="tag" x="241.5" y="195" text-anchor="middle">GSAP</text><rect x="277" y="176" width="79" height="28" rx="14" fill="#f1f5f9"/><text class="tag" x="316.5" y="195" text-anchor="middle">pdf-lib</text>
+  <circle class="pulse" cx="482" cy="44" r="5" fill="#22c55e"/><text class="live" x="496" y="49">no ar</text>
+  <text class="arrow" x="552" y="52">↗</text>
+</g>
+<rect x="0.5" y="0.5" width="599" height="229" rx="20" fill="none" stroke="#e2e8f0"/>
+</svg>
