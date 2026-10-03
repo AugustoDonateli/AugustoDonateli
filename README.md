@@ -21,8 +21,12 @@ de uma plataforma de estudos para o ENEM a uma sala de fuga de química com plac
 const guto = {
   base: "Cachoeiro de Itapemirim, ES 🇧🇷",
   estuda: "Informática no Ifes",
-  trabalhaCom: ["sites para negócios locais", "automação", "IA no WhatsApp"],
-  stackFavorita: ["React", "TypeScript", "Next.js", "Supabase"],
+  trabalhaCom: [
+    "sites para negócios locais",
+    "automação",
+    "IA no WhatsApp",
+  ],
+  stack: ["React", "TypeScript", "Next.js", "Supabase"],
   agora: "construindo a Aurora",
 };
 ```
