@@ -12,9 +12,7 @@
 
 ## Projetos
 
-<a href="https://github.com/AugustoDonateli/compasso">
 <img alt="Compasso: aplicação de teoria musical. Print da página inicial e do mapa das notas." src="assets/compasso-claro.svg#gh-light-mode-only" width="100%"><img alt="Compasso: aplicação de teoria musical. Print da página inicial e do mapa das notas." src="assets/compasso-escuro.svg#gh-dark-mode-only" width="100%">
-</a>
 
 Feito para quem está começando num instrumento: cada conceito de teoria toca na hora e aparece no braço do violão. O motor de teoria musical é próprio e tem testes.<br>
 [Código](https://github.com/AugustoDonateli/compasso)
@@ -24,16 +22,12 @@ Feito para quem está começando num instrumento: cada conceito de teoria toca n
 <table>
 <tr>
 <td width="50%" valign="top">
-<a href="https://github.com/AugustoDonateli/escape-quimico">
 <img alt="Escape Químico: diagrama com o celular da equipe, o tablet do instrutor e a TV do placar, ligados a Next.js e Supabase." src="assets/escape-claro.svg#gh-light-mode-only" width="100%"><img alt="Escape Químico: diagrama com o celular da equipe, o tablet do instrutor e a TV do placar, ligados a Next.js e Supabase." src="assets/escape-escuro.svg#gh-dark-mode-only" width="100%">
-</a>
 <p>Organiza a fila do dia, conduz cada sessão, entrega as perguntas pelos QR codes das estações e mostra o placar ao vivo. Feito para a sala de fuga que a minha turma montou.</p>
 <p><a href="https://github.com/AugustoDonateli/escape-quimico">Código</a></p>
 </td>
 <td width="50%" valign="top">
-<a href="https://github.com/AugustoDonateli/estudos-enem">
 <img alt="Estudos ENEM: print do plano de hoje." src="assets/enem-claro.svg#gh-light-mode-only" width="100%"><img alt="Estudos ENEM: print do plano de hoje." src="assets/enem-escuro.svg#gh-dark-mode-only" width="100%">
-</a>
 <p>Diagnostica, prioriza, monta o plano do dia e guarda cada erro como um conceito para revisar. Tem testes de ponta a ponta com Playwright.</p>
 <p><a href="https://github.com/AugustoDonateli/estudos-enem">Código</a></p>
 </td>
@@ -42,9 +36,7 @@ Feito para quem está começando num instrumento: cada conceito de teoria toca n
 
 <br>
 
-<a href="https://aurora-landing-seven.vercel.app">
 <img alt="Aurora: atendimento com IA no WhatsApp. Print da página e detalhe da conversa de demonstração." src="assets/aurora-claro.svg#gh-light-mode-only" width="100%"><img alt="Aurora: atendimento com IA no WhatsApp. Print da página e detalhe da conversa de demonstração." src="assets/aurora-escuro.svg#gh-dark-mode-only" width="100%">
-</a>
 
 Atende clientes no WhatsApp: tira dúvidas, passa preços e marca horários olhando a agenda do dono. Quando o assunto é sensível, passa a conversa para uma pessoa. O código é privado.<br>
 [Site](https://aurora-landing-seven.vercel.app)
@@ -54,16 +46,12 @@ Atende clientes no WhatsApp: tira dúvidas, passa preços e marca horários olha
 <table>
 <tr>
 <td width="50%" valign="top">
-<a href="https://github.com/AugustoDonateli/site-ifesciencia">
 <img alt="Ifesciência: print da página inicial." src="assets/ifesciencia-claro.svg#gh-light-mode-only" width="100%"><img alt="Ifesciência: print da página inicial." src="assets/ifesciencia-escuro.svg#gh-dark-mode-only" width="100%">
-</a>
 <p>Cada vídeo do projeto vira uma ficha que um professor consegue reproduzir em sala, e a equipe publica sem precisar de programador.</p>
 <p><a href="https://site-ifesciencia.vercel.app">Site</a> &nbsp; <a href="https://github.com/AugustoDonateli/site-ifesciencia">Código</a></p>
 </td>
 <td width="50%" valign="top">
-<a href="https://github.com/AugustoDonateli/nba-do-zero">
 <img alt="NBA do zero: print da página inicial." src="assets/nba-claro.svg#gh-light-mode-only" width="100%"><img alt="NBA do zero: print da página inicial." src="assets/nba-escuro.svg#gh-dark-mode-only" width="100%">
-</a>
 <p>Explica a NBA para quem não sabe nada e ajuda a melhorar a tática do time com jogadas animadas. Sem build e sem dependências.</p>
 <p><a href="https://augustodonateli.github.io/nba-do-zero/">Site</a> &nbsp; <a href="https://github.com/AugustoDonateli/nba-do-zero">Código</a></p>
 </td>
