@@ -1,6 +1,9 @@
-### Augusto Donateli
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-escuro.svg">
+  <img alt="Augusto Donateli, desenvolvedor web em Cachoeiro de Itapemirim, ES. Procurando estágio." src="assets/banner-claro.svg" width="100%">
+</picture>
 
-Desenvolvedor web em Cachoeiro de Itapemirim, ES. Estudo Informática no Ifes e trabalho principalmente com **TypeScript, React, Next.js e Supabase**. Estou em busca de uma oportunidade de **estágio em desenvolvimento**.
+Estudo Informática no Ifes e trabalho principalmente com **TypeScript, React, Next.js e Supabase**. Estou em busca de uma oportunidade de **estágio em desenvolvimento**.
 
 Hoje desenvolvo a **[Aurora](https://aurora-landing-seven.vercel.app)**, um sistema de atendimento com inteligência artificial que responde clientes e agenda horários pelo WhatsApp para pequenos negócios. Também faço sites e sistemas sob medida para empresas da região.
 
